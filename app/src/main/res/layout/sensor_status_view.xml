@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/home_controls_bg">
+
+    <TextView
+        android:id="@+id/txtAck"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:background="#996633"
+        android:padding="5dp"
+        android:text="Sensor Acknowledge"
+        android:textColor="@color/white"
+        android:textSize="16sp" />
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_above="@id/txtAck"
+        android:orientation="vertical">
+
+        <include
+            android:id="@+id/header"
+            layout="@layout/header_view"
+            android:layout_width="fill_parent"
+            android:layout_height="50dp" />
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_marginTop="5dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/txtNoSensor"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:gravity="center"
+                android:text="No Senosors Available"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                android:visibility="gone" />
+
+            <!--<android.support.v4.widget.NestedScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fillViewport="true">-->
+
+            <com.divum.customview.ExpandableHeightGridView
+                android:id="@+id/gridview_sensor"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:horizontalSpacing="5dp"
+                android:numColumns="4"
+                android:stretchMode="columnWidth"
+                android:layout_marginBottom="16dp"
+                android:verticalSpacing="5dp" />
+
+            <!--</android.support.v4.widget.NestedScrollView>-->
+        </RelativeLayout>
+    </LinearLayout>
+
+
+
+</RelativeLayout>
